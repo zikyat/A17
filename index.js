@@ -50,117 +50,12 @@ const {
 } = require("./lib/myfunc");
 const figlet = require("figlet");
 const { color } = require("./lib/color");
-/*
-module.exports = async function startA17() {
-
-  try {
-    const store = makeInMemoryStore({
-      logger: pino().child({ level: "silent", stream: "store" }),
-    });
-
-    // store.readFromFile('./temp/store.json')
-
-    //     setInterval(() => {
-    //       store.writeToFile('./temp/store.json')
-    //     }, 10000);
-
-    const authMode = global.auth;
-    const qrMode = process.argv.includes('--use-qr-code') || auth.toLowerCase() === 'qr';
-    const pairingMode = process.argv.includes('--use-pairing-code') || auth.toLowerCase() === 'pairing';
-
-    const rl = readLine.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
-
-    const question = (text) => new Promise((resolve) => rl.question(text, resolve));
 
 
-    // console.log(
-    //   color(
-    //     figlet.textSync("A17 Bot MD", {
-    //       font: "Standard",
-    //       horizontalLayout: "default",
-    //       vertivalLayout: "default",
-    //       //width: 80,
-    //       // whitespaceBreak: true,
-    //       whitespaceBreak: false,
-    //     }),
-    //     "green"
-    //   )
-    // );
-    // console.log(color('\nHello, I am Kai, the main Developer of this bot.\n\nThanks for using: A17 Bot.', 'aqua'))
-    // console.log(color('\nYou can follow me on GitHub: Kai0071', 'aqua'))
-
-    const { state, saveCreds } = await useMultiFileAuthState(`${global.sessionFile}`);
-    const A17 = A17Connect({
-      logger: pino({ level: "silent" }),
-      printQRInTerminal: !pairingMode,
-      // browser: ["A17 Bot", "Safari", "3.O"],
-      browser: ["Ubuntu", "Safari", "3.1.0"],
-      auth: state,
-      patchMessageBeforeSending: (message) => {
-        const requiresPatch = !!(
-          message.buttonsMessage
-          || message.templateMessage
-          || message.listMessage
-        );
-        if (requiresPatch) {
-          message = {
-            viewOnceMessage: {
-              message: {
-                messageContextInfo: {
-                  deviceListMetadataVersion: 2,
-                  deviceListMetadata: {},
-                },
-                ...message,
-              },
-            },
-          };
-        }
-        return message;
-      },
-    });
-
-    store.bind(A17.ev);
+//-------------------------------------------------------------------------------------------------------------------------------------//
 
 
-
-    if (pairingMode && !A17.authState.creds.registered) {
-      let phoneNumber;
-      if (!!phoneNumber) {
-        phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
-
-        if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-          console.log(chalk.bgBlack(chalk.redBright('Start with country code of your WhatsApp Number, Example : 916xxxx'), '\n> '));
-          process.exit(0);
-        }
-        rl.close();
-      } else {
-        phoneNumber = await question(chalk.bgBlack(chalk.greenBright('Please enter your WhatsApp number example: 916xxxx'), '\n> '));
-        phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
-
-        if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-          console.log(chalk.bgBlack(chalk.redBright('Start with country code of your WhatsApp Number, Example : 916xxxx'), '\n> '));
-
-          phoneNumber = await question(chalk.bgBlack(chalk.greenBright('Please enter your WhatsApp number example: 916xxxx'), '\n> '));
-          phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
-          rl.close();
-        }
-      }
-
-      setTimeout(async () => {
-        let code = await A17.requestPairingCode(phoneNumber);
-        code = code.match(/.{1,4}/g).join('-') || code;
-        console.log(chalk.black(chalk.greenBright('Your pairing code:')), chalk.black(chalk.white(code)));
-      }, 3000);
-    }
-
-    A17.ev.on("creds.update", await saveCreds);
-    */
-
-
-    let phoneNumber = global.pairNumber;
+let phoneNumber = global.pairNumber;
 
 module.exports = async function startA17() {
   try {
@@ -233,6 +128,9 @@ module.exports = async function startA17() {
     A17.ev.on("creds.update", await saveCreds);
 
 
+    //-------------------------------------------------------------------------------------------------------------------------------------//
+
+
     A17.ev.on("connection.update", async (update) => {
       const { connection, lastDisconnect } = update;
       if (connection === "close") {
@@ -278,7 +176,8 @@ module.exports = async function startA17() {
     });
 
 
-//-------------------------------------------------------------------------------------------------------------------------------------//
+    //-------------------------------------------------------------------------------------------------------------------------------------//
+
 
     //
     A17.ws.on('CB:call', async (json) => {
