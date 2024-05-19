@@ -3763,7 +3763,7 @@ Typed *surrender* to surrender and admited defeat`
                   text: '            Powered by A17 2024'
                 }),
                 header: proto.Message.InteractiveMessage.Header.create({
-                  ...(await prepareWAMessageMedia({ image: { url: 'https://r4.wallpaperflare.com/wallpaper/1003/376/845/makoto-shinkai-kimi-no-na-wa-wallpaper-0816ade8b0301c58302c014e48d2441a.jpg' } }, { upload: A17.waUploadToServer })),
+                  ...(await prepareWAMessageMedia({ image: { url: 'https://graph.org/file/4ca10c7029fcaee1003f7.jpg' } }, { upload: A17.waUploadToServer })),
 
                   title: '        Leave Group Confirmation',
                   subtitle: null,
@@ -6992,7 +6992,7 @@ _Click the button below to download_`
                     text: "            Powered by A17 2024"
                   }),
                   header: proto.Message.InteractiveMessage.Header.create({
-                    ...(await prepareWAMessageMedia({ image: { url: 'https://r4.wallpaperflare.com/wallpaper/1003/376/845/makoto-shinkai-kimi-no-na-wa-wallpaper-0816ade8b0301c58302c014e48d2441a.jpg' } }, { upload: A17.waUploadToServer })),
+                    ...(await prepareWAMessageMedia({ image: { url: 'https://graph.org/file/4ca10c7029fcaee1003f7.jpg' } }, { upload: A17.waUploadToServer })),
 
 
                     title: "                      Help Menu",
