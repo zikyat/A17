@@ -3,4 +3,4 @@ build:
       worker: Dockerfile
 run:
 
-   web: npm i -g forever && forever index.js && forever save && forever logs
+   web: npm i -g forever && forever start.js && forever save && forever logs
