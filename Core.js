@@ -963,6 +963,29 @@ Typed *surrender* to surrender and admited defeat`
           });
         break;
 
+        case 'restart':
+        await A17.sendMessage(from, { react: { text: "⚙", key: m.key } });
+        if (!isCreator) return reply(mess.botowner)
+
+        await A17.sendMessage(from, { text: mess.waiting });
+        await A17.sendMessage(from, { react: { text: "✅", key: m.key } });
+        await A17.sendMessage(from, { text: 'Restarting Success!' });
+
+        // Delay the shutdown by 5 seconds using sleep function
+        //await sleep(5000);
+
+        // Use PM2 to restart the script
+        pm2.restart('index', (err) => {
+          if (err) {
+            A17.sendMessage(from, { react: { text: "❌", key: m.key } });
+            A17.sendMessage(from, { text: 'Restarting Failed!' });
+          } else {
+            return;
+          }
+        });
+        break;
+
+
 
       case 'ls':
         if (isBan) return reply(mess.banned);
