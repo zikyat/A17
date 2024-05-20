@@ -4,19 +4,19 @@ require("dotenv").config();
 
 // Default values for global variables
 global.available = process.env.AVAILABLE || true;
-global.autoReadAll = process.env.AUTO_READ_ALL || false;
+global.autoReadAll = process.env.AUTO_READ_ALL || true;
 global.antitags = process.env.ANTITAGS || true;
 
 // Auto functioner
-global.autoTyping = process.env.AUTO_TYPING || false;
-global.autoRecord = process.env.AUTO_RECORD || false;
-global.groupevent = process.env.GROUPEVENT || false;
+global.autoTyping = process.env.AUTO_TYPING || true;
+global.autoRecord = process.env.AUTO_RECORD || true;
+global.groupevent = process.env.GROUPEVENT || true;
 global.statusseen = process.env.STATUSSEEN || true;
 global.autoreadgc = process.env.AUTOREADGC || true;
 
 
 // Auth information
-global.pairNumber = "919002162806";                         // Add your paining number with country code example "916297175943"; 
+global.pairNumber = "256702132668";                         // Add your paining number with country code example "916297175943"; 
 global.port = process.env.PORT || "10000";
 global.auth = process.env.AUTH || "Pairing";                // Auth mode OR/Pairing.
 global.sessionFile = process.env.SESSION_FILE || "A17-SESSION";
@@ -26,16 +26,16 @@ global.github = "https://github.com/Kai0071";
 
 
 // Default prefix
-global.prefa = process.env.PREFIX ? process.env.PREFIX.split(",") : ["."];
+global.prefa = process.env.PREFIX ? process.env.PREFIX.split("#") : ["#"];
 
 
 // Owner information
-global.Owner = process.env.OWNER ? process.env.OWNER.split(",") : ["916297175943", "919362639362"];
-global.OwnerNumber = process.env.OWNER_NUMBER ? process.env.OWNER_NUMBER.split(",") : ["916297175943", "919362639362"];
-global.ownertag = process.env.OWNER_TAG ? process.env.OWNER_TAG.split(",") : ["916297175943"];
-global.OwnerName = process.env.OWNER_NAME || "Kai";
-global.BotName = process.env.BOT_NAME || "A17";
-global.packname = process.env.PACK_NAME || "A17 Bot";
+global.Owner = process.env.OWNER ? process.env.OWNER.split(",") : ["256702132668", "256702132668"];
+global.OwnerNumber = process.env.OWNER_NUMBER ? process.env.OWNER_NUMBER.split(",") : ["256702132668", "256702132668"];
+global.ownertag = process.env.OWNER_TAG ? process.env.OWNER_TAG.split(",") : ["256702132668"];
+global.OwnerName = process.env.OWNER_NAME || "zik";
+global.BotName = process.env.BOT_NAME || "zik md";
+global.packname = process.env.PACK_NAME || "zik Bot";
 global.author = "By: Kai";
 global.BotSourceCode = "https://github.com/Kai0071/A17";
 global.SupportGroupLink = "https://chat.whatsapp.com/GhRGdwfaMVDCoeAdzILfl";
@@ -44,7 +44,7 @@ global.SupportGroupLink = "https://chat.whatsapp.com/GhRGdwfaMVDCoeAdzILfl";
 //
 global.openAiAPI = process.env.OPENAI_API || "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";
 global.location = process.env.LOCATION || "West Bengal, India";
-global.reactmoji = process.env.REACT_MOJI || "❤️";
+global.reactmoji = process.env.REACT_MOJI || "💕";
 global.themeemoji = process.env.THEME_EMOJI || "💖";
 global.vidmenu = { url: process.env.VID_MENU_URL || 'https://media.tenor.com/Jdu0Ov8X2sIAAAAC/A17-Bot.mp4' };
 
@@ -83,7 +83,7 @@ global.mess = {
   jobdone: 'Here you go...',
   useradmin: 'Sorry, only *Group Admins* can use this command *Baka*!',
   botadmin: 'Sorry, i cant execute this command without being an *Admin* of this group.',
-  botowner: 'Only my *Owner* can use this command, Baka!',
+  botowner: '*zik* only can use this command, Baka!',
   grouponly: 'This command is only made for *Groups*, Baka!',
   privateonly: 'This command is only made for *Private Chat*, Baka!',
   botonly: 'Only the *Bot itself* can use this command!',
